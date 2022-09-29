@@ -259,13 +259,11 @@ var baseUri = new Uri(baseUrl);
 var uri = new Uri(baseUri, path);
 Console.WriteLine($"AbsolutePath: {uri.AbsolutePath}");
 Console.WriteLine($"AbsoluteUri: {uri.AbsoluteUri}");
-```
 
-> 控制台输出：
->
-> AbsolutePath: /xxxxx
->
-> AbsoluteUri: https://user:password@www.contoso.com:80/xxxxx?a=q&b=p
+// 输出信息如下:
+//  AbsolutePath: /xxxxx
+//  AbsoluteUri: https://user:password@www.contoso.com:80/xxxxx?a=q&b=p
+```
 
 以下为`Uri`合并源码：
 
