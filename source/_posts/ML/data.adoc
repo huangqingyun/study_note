@@ -4,7 +4,7 @@ date: 2022-09-14 16:17:49
 tags: ["python","pytorch","data","ML"]
 ---
 = 数据集
-青云 黄 <qyhuang@jiliason.com>
+黄青云 <qyhuang@jiliason.com>
 
 :imagesdir: ./img/
 
@@ -14,7 +14,7 @@ tags: ["python","pytorch","data","ML"]
 
 image::机器学习简要流程.png[]
 
-=== 深度学习模型任务时间占比
+=== 深度学习模型任务各阶段时间占比
 
 2020年Anaconda公司的调查:
 
@@ -22,26 +22,49 @@ image::机器学习任务时间占比.png[]
 
 == 数据获取
 
-* 数据集下载：
-** https://zhuanlan.zhihu.com/p/25138563[各领域公开数据集下载]
-* 爬数据/数据挖掘
-* 自己采集
-* 生成数据；例如，GAN生成图片，PS图片，例如目标检测，可以将目标物体放到不同背景生成图片数据
+=== 数据发现和验证
+
+数据发现：查找对当前任务有用的数据。
+
+* 已存在的数据集里查找/识别
+** 数据集搜索、下载
+*** https://paperswithcode.com/datasets[paperswithcode datasets]
+*** https://www.kaggle.com/datasets[kaggle datasets]
+*** https://datasetsearch.research.google.com/[google dataset search]
+*** https://tensorflow.google.cn/datasets?hl=zh-cn[tensorflow]
+*** https://huggingface.co/datasets[huggingface]
+*** https://zhuanlan.zhihu.com/p/25138563[各领域公开数据集下载]
+*** https://static.hlt.bme.hu/semantics/external/pages/deep_learning/en.wikipedia.org/wiki/List_of_datasets_for_machine_learning_research.html[数据集搜索页]
+* 搜索基准数据集评估/验证想法
+* 收集新数据
+** 已有原始数据（例：关系数据库，文档数据库等）
+** 爬数据
+** 采集
+
+=== 数据融合
+
+数据融合：把不同数据源数据整理成一个一致性的数据集。
+
+* 将多个数据源合并为一个一致的数据集。 
+* 产品数据通常列在多个表中，根据关键字段合并多张表.例如：数据库的不同表进行join。
+* 关键字段问题:标识id、缺失行、冗余列、值冲突
+
+=== 生成数据
+
+* GAN生成图片
+** 人脸相关的模型，可批量生成人脸
+** 目标检测相关的模型，可以生成目标物体放到背景生成图片不同位置的数据。
 * 数据增强，
 ** 图片：进行各种滤镜或位置变化，拉伸，通道提取，加噪音等生成新的数据
 ** 文本：对其进行不同语音翻译，后再将翻译结果再翻译回原来的语言来，这样就可以得到多个语义接近的不同句子。
+** 音频:可以通过TTS生成
 
+=== 小结
 
-
-数据融合：把不同数据源数据整理成一个一致性的数据集。
-不同数据库和不同表进行数据整合，合并。
-
-====
 * 找合适数据
 * 原始数据：需要清理，整理
 * 数据增强/扩充：再数据不足时使用，再现有数据基础上进行增强，扩充
 * 数据合成/生成
-====
 
 == 数据标注
 
